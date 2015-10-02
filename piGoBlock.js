@@ -186,4 +186,4 @@ new (function () {
      // Register the extension
      ScratchExtensions.register('Akrofi-Pi2Go-Scratch_Blocks', descriptor, ext);
      
-     })();
+     })({});

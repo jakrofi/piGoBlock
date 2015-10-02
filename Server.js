@@ -1,4 +1,6 @@
 (function(ext) {
+ 
+ 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -8,7 +10,8 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.my_first_block = function() {
+    var Socket;
+    ext.set_Server = function() {
         // Code that gets executed when the block is run
     };
 
@@ -16,7 +19,7 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'my first block', 'my_first_block'],
+            [' ', 'Set Server', 'set_Server'],
         ]
     };
 

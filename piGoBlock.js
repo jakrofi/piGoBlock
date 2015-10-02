@@ -139,7 +139,7 @@ new (function () {
      // Block and block menu descriptions
      var descriptor = {
      blocks: [
-              ['w', 'IPAddress/Port: %s : %s', 'setBoard', '1', 'localhost', '1234'],
+              ['w', 'IPAddress/Port: %s : %s', 'setBoard', 'localhost', '1234'],
               [' ', 'Forward: Set Speed= %n', 'forward', '30']
             
             ],

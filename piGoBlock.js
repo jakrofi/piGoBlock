@@ -1,39 +1,4 @@
-/*********************************************************************************************
- *
- *                                     * * * Xi4s * * *
- *
- *********************************************************************************************
- * Created by afy on 8/24/14.
- *
- * This is the Xi Client for Scratch
- *
- * It follows the Scratch JavaScript Extension Spec
- *
- * http://llk.github.io/scratch-extension-docs/
- *
- * Version v.002
- * Nov 7, 2014
- *
- * @author: Joshua Akrofi using Allan Yorkins Xi Client as a template
- Copyright (c) 2015 Joshua Akrofi All right reserved.
- 
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public
- License as published by the Free Software Foundation; either
- version 3.0 of the License, or (at your option) any later version.
- 
- This library is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- Lesser General Public License for more details.
- 
- You should have received a copy of the GNU General Public
- License along with this library; if not, write to the Free Software
- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- *
- */
-
-new (function () {
+(function () {
      var ext = this;
      //console.log('Xi4s v.003');
      

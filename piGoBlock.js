@@ -5,22 +5,12 @@ new (function () {
      var boardStatus = 0; //  0:not ready(RED), 1:partially ready or warning(YELLOW), 2: fully ready(GREEN)
      
     
-     ext._shutdown = function ()
-     {
-        console.log('Sending reset to board index ' + index);
-        socket.send('resetBoard');
-     
-     };
+     ext._shutdown = function (){};
      
      // Status reporting code - part of boilerplate provided by Scratch
      // Set the 'LED' on the Scratch Editor
-     ext._getStatus = function ()
-     {
-        return
-        {
-            status: boardStatus,
-            msg: 'Ready'
-        };
+     ext._getStatus = function (){
+        return {status: boardStatus, msg: 'Ready'};
      };
      
      /*****************************************************************************************************/
@@ -37,8 +27,7 @@ new (function () {
      // The associated scratch block is a 'wait' command block.
      // We don't want Scratch to continue until the socket is open bidirectionally.
      // When socket.onopen is called the callback is returned so that scratch can proceed processing
-     ext.setBoard = function (ipAddress, port, callback)
-     {
+     ext.setBoard = function (ipAddress, port, callback){
         var timeoutID; // need to set a timeout when a socket is created because we are using a 'wait' block
      
         console.log('set IP Address: ' + ipAddress, port);
@@ -53,8 +42,7 @@ new (function () {
      
      
         // attach an onopen handler to this socket. This message is sent by a servers websocket
-        socket.onopen = function (event)
-        {
+        socket.onopen = function (event){
             window.clearTimeout(timeoutID);
      
             console.log('onopen message received');
@@ -65,8 +53,7 @@ new (function () {
             callback(); // tell scratch to proceed processing
         };
      
-        function noServerAlert()
-        {
+        function noServerAlert(){
             //alert("Server not responding. Did you start XiServer for this board?" +
            //"Please start the server, reload this page and try again");//createAlert(20, boardID);
             boardStatus = 0;
@@ -77,8 +64,7 @@ new (function () {
           
      
      // Digital output command block
-     ext.forward = function (speed)
-     {
+     ext.forward = function (speed){
         // strip index number off of message to determine value to send to server
         var msg = 'forward/' + speed;
         sendCommand(msg);

@@ -1,4 +1,4 @@
-(function () {
+new (function () {
      var ext = this;
      //console.log('Xi4s v.003');
      
@@ -151,4 +151,4 @@
      // Register the extension
      ScratchExtensions.register('Akrofi-Pi2Go-Scratch_Blocks', descriptor, ext);
      
-     })({});
+     })();

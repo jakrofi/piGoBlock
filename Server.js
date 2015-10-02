@@ -10,7 +10,7 @@
   return {status: 2, msg: 'Ready'};
   };
       
-  ext.setBoard = function (boardID, ipAddress, port, callback) {
+  ext.setBoard = function (ipAddress, port, callback) {
   var timeoutID; // need to set a timeout when a socket is created because we are using a 'wait' block
       
  
@@ -35,7 +35,7 @@
 
   function noServerAlert() {
       return;
-      }
+ }
 
 
   ext.forward = function (speed) {
@@ -45,7 +45,7 @@
   
       
       
-  function sendCommand(msg, board, type) {
+  function sendCommand(msg) {
       // send out message
       socket.send(msg);
        return;

@@ -11,7 +11,7 @@
     };
 
     var Socket;
-    ext.set_Server = function() {
+    ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run
     };
 
@@ -19,7 +19,7 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'Set Server', 'set_Server'],
+            ['w', 'Set Server IPAddress/Port: %s : %s', 'set_Server', 'localhost', '1234'],
         ]
     };
 

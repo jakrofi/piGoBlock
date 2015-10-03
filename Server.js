@@ -15,7 +15,7 @@
     ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run
         var timeoutID;
-        ipGobal = ipAddress;
+        //ipGobal = ipAddress;
         Socket = new WebSocket('ws://' + ipAddress + ':' + port);
         timeoutID = window.setTimeout(noServerAlert, 2000);
  
@@ -38,9 +38,8 @@
  
  
     function sendCommand(msg){
-        if(ipGobal === 'localhost'){
+        if(ipGobal === 0){
             alert("IP Address for this board was not set.");
-            return;
         }
  
         else

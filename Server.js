@@ -1,6 +1,5 @@
 (function(ext) {
  
- 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -13,6 +12,19 @@
     var Socket;
     ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run
+        var timeoutID;
+        Socket = new WebSocket('ws://' + ipAddress + ':' + port);
+        timeoutID = window.setTimeout(noServerAlert, 2000);
+ 
+        socket.onopen = function (event) {
+            window.clearTimeout(timeoutID);
+            callback();
+        };
+ 
+        function noServerAlert() {
+            return;
+        }
+
     };
 
     // Block and block menu descriptions

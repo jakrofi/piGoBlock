@@ -10,7 +10,7 @@
     };
 
     var Socket;
-    var ipGobal;
+    var ipGobal= 0;
  
     ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run

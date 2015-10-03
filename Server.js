@@ -10,7 +10,7 @@
     };
 
     var Socket;
-    var ipGobal= 0;
+    var ipGobal= '0';
  
     ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run
@@ -21,6 +21,7 @@
  
         Socket.onopen = function (event) {
             window.clearTimeout(timeoutID);
+            Socket.send('Xi4sOnline');
             callback();
         };
  
@@ -37,13 +38,15 @@
     };
  
  
-    function sendCommand(msg){
-        if(ipGobal === 0){
+    function sendCommand(msg)
+    {
+        /*if(ipGobal === 'localhost' || ipGobal === '0')
+        {
             alert("IP Address for this board was not set.");
         }
  
-        else
-            Socket.send(msg);
+        else*/
+        Socket.send(msg);
     }
 
     // Block and block menu descriptions

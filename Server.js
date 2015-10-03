@@ -10,13 +10,16 @@
     };
 
     var Socket;
+    var ipGobal;
+ 
     ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run
         var timeoutID;
+        ipGobal = ipAddress;
         Socket = new WebSocket('ws://' + ipAddress + ':' + port);
         timeoutID = window.setTimeout(noServerAlert, 2000);
  
-        socket.onopen = function (event) {
+        Socket.onopen = function (event) {
             window.clearTimeout(timeoutID);
             callback();
         };
@@ -29,8 +32,20 @@
  
     ext.forward= function (speed){
         var msg= 'forward/' + speed;
+        sendCommand(msg);
  
- };
+    };
+ 
+ 
+    function sendCommand(msg){
+        if(ipGobal === 'localhost'){
+            alert("IP Address for this board was not set.");
+            return;
+        }
+ 
+        else
+            Socket.send(msg);
+    }
 
     // Block and block menu descriptions
     var descriptor = {

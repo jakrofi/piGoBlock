@@ -26,12 +26,18 @@
         }
 
     };
+ 
+    ext.forward= function (speed){
+        var msg= 'forward/' + speed;
+ 
+ };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             // Block type, block name, function name
             ['w', 'Set Server IPAddress/Port: %s : %s', 'set_Server', 'localhost', '1234'],
+            [' ', 'Forward. Set Speed= %n', 'forward', '30'],
         ]
     };
 

@@ -17,6 +17,9 @@
         var net = require('net');
         var client = new net.Socket();
 
+        client.connect(8124, '192.168.32.171', function() {
+                client.write('I am Chuck Norris!');
+        });
         /*var myserver = net.createServer(function(c) {
             c.on('end', function()  {
             c.write('client disconnected');
@@ -26,7 +29,7 @@
             //'listening' listener
             console.log('server bound');
          });*/
-  
+        client.write('I am Chuck Norris!');
     };
     // Block and block menu descriptions
     var descriptor = {

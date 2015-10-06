@@ -13,11 +13,11 @@
     // final argument. This should be called to indicate that the block can
     // stop waiting.
     ext.my_first_block = function() {
-        /*// Code that gets executed when the block is run
-   
-   
-         var net = require('net');
-         var myserver = net.createServer(function(c) {
+        // Code that gets executed when the block is run
+        var net = require('net');
+        var client = new net.Socket();
+
+        /*var myserver = net.createServer(function(c) {
             c.on('end', function()  {
             c.write('client disconnected');
          });

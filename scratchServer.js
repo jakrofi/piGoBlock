@@ -14,9 +14,9 @@
         // Functions for block with type 'w' will get a callback function as the
         // final argument. This should be called to indicate that the block can
         // stop waiting.
-        ext.my_first_block = function()
-        {
-           // Code that gets executed when the block is run
+    ext.my_first_block = function()
+    {
+           /*// Code that gets executed when the block is run
            
                                      
             var net = require('net');
@@ -31,22 +31,22 @@
             {
                 //'listening' listener
                 console.log('server bound');
-            });
+            });*/
                                             
-        };
+    };
          // Block and block menu descriptions
-         var descriptor = {
-         blocks: [
+    var descriptor = {
+    blocks: [
                    [' ', 'my first block', 'my_first_block'],
-                  ]
-          };
+            ]
+    };
     
                                      
     
 
     // Register the extension
     ScratchExtensions.register('My first extension', descriptor, ext);
- })({});
+})({});
 
 
 

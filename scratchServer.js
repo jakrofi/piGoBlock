@@ -1,7 +1,18 @@
 (function(ext)
- {   var net = require('net');
-     var myserver = net.createServer(function(c)
+ {
+    // Cleanup function when the extension is unloaded
+    ext._shutdown = function() {};
+ 
+    // Status reporting code
+    // Use this to report missing hardware, plugin or unsupported browser
+    ext._getStatus = function()
     {
+        return {status: 2, msg: 'Ready'};
+    };
+
+     var net = require('net');
+     var myserver = net.createServer(function(c)
+     {
         c.on('end', function()
         {
             c.write('client disconnected');
@@ -9,18 +20,6 @@
                                      
         c.write('hello World\r\n');
                                      
-    
-                                     
-        // Cleanup function when the extension is unloaded
-        ext._shutdown = function() {};
-  
-        // Status reporting code
-        // Use this to report missing hardware, plugin or unsupported browser
-        ext._getStatus = function()
-        {
-            return {status: 2, msg: 'Ready'};
-        };
-  
         // Functions for block with type 'w' will get a callback function as the
         // final argument. This should be called to indicate that the block can
         // stop waiting.

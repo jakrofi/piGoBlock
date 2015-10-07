@@ -16,7 +16,7 @@
         // Code that gets executed when the block is run
         var timeoutID;
         //ipGobal = ipAddress;
-        Socket = new WebSocket('ws://' + ipAddress + ':' + port);
+        Socket = new WebSocket('ws://' + ipAddress + ':' + port+ '/');
         timeoutID = window.setTimeout(noServerAlert, 2000);
  
         Socket.onopen = function (event) {

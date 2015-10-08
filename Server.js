@@ -35,6 +35,11 @@
 //                                 MOTOR FUNCTIONS
 //***********************************************************************************
 
+    ext.motorInstructions= function(){
+        alert("BOOYA");
+ 
+    };
+ 
     //Stop function
     ext.stop = function (){
         var msg= 'stop/';
@@ -152,6 +157,7 @@
             // Block type, block name, function name
             //Motor Blocks
             ['w', 'Set Server IPAddress/Port: %s : %s', 'set_Server', 'localhost', '1234'],
+            [' ', 'MOTOR BLOCK INSTRUCTIONS.', 'motorInstructions'],
             [' ', 'Stop', 'stop'],
             [' ', 'Forward- Set Speed= %n', 'forward', '30'],
             [' ', 'Reverse- Set Speed= %n', 'reverse', '30'],

@@ -91,14 +91,58 @@
         sendCommand(msg);
     };
  
+ 
+ //***********************************************************************************
+ //                                 SERVO FUNCTIONS
+ //***********************************************************************************
+    ext.startServos= function(){
+        var msg= 'startServos/';
+        sendCommand(msg);
+    };
+ 
+    ext.stopServos= function(){
+        var msg= 'stopServos/';
+        sendCommand(msg);
+    };
+
+    ext.setServo= function(Servo, Degrees){
+        var msg= 'setServos/'+ Servo + '/' + Degrees;
+        sendCommand(msg);
+    };
+ 
+ 
+ //***********************************************************************************
+ //                                 RGB LED Functions
+ //***********************************************************************************
+ 
+    ext.setLED= function (LED, Red, Green, Blue){
+        var msg= 'setLED/' + LED + '/' + Red + '/' + Green + '/' + Blue;
+        sendCommand(msg);
+    };
+ 
+    ext.setAllLEDs= function (Red, Green, Blue){
+        var msg= 'setAllLEDs/' + Red + '/' + Green + '/' + Blue;
+        sendCommand(msg);
+    };
+ 
+ 
+    ext.LsetLED= function (LED, value){
+        var msg= 'LsetLED/' + LED + '/' + value;
+        sendCommand(msg);
+    };
+ 
+    ext.LsetAllLEDs= function (value){
+        var msg= 'LsetAllLEDs/' + value;
+        sendCommand(msg);
+    };
+ 
+ //***********************************************************************************
+ //                                 SEND COMMAND FUNCTION
+ //***********************************************************************************
+ 
     function sendCommand(msg)
     {
-        /*if(ipGobal === 'localhost' || ipGobal === '0')
-        {
-            alert("IP Address for this board was not set.");
-        }
  
-        else*/
         Socket.send(msg);
     }
 
@@ -106,6 +150,7 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
+            //Motor Blocks
             ['w', 'Set Server IPAddress/Port: %s : %s', 'set_Server', 'localhost', '1234'],
             [' ', 'Stop', 'stop'],
             [' ', 'Forward- Set Speed= %n', 'forward', '30'],
@@ -116,10 +161,33 @@
             [' ', 'Turn Reverse- Set Right speed= %n : Set Left speed= %n', 'turnReverse', '30', '30'],
             [' ', 'Go- Set Right speed= %n : Set Left speed= %n', 'goM', '30', '30'],
             [' ', 'Go- Set Speed= %n', 'go', '30'],
+            // Servo Blocks
+            [' ', 'Start Servos', 'startServos'],
+            [' ', 'Stop Servos', 'stopServos'],
+            [' ', 'Set Servos- Servo:%m.servoNum  Degrees= %n', 'setServo', '1', '30'],
+            // LED Blocks
+            [' ', 'Set LED:%m.LEDNum Red:%n, Green:%n, Blue:%n', 'setLED', '1', '1000', '1000', '1000'],
+            [' ', 'Set All LEDs- Red:%n, Green:%n, Blue:%n', 'setAllLEDs', '1000', '1000', '1000'],
+            [' ', 'Set White LED:%m.LEDNum Value:%n', 'LsetLED','1', '1000'],
+            [' ', 'Set All White LEDs- Value:%n', 'LsetAllLEDs','1000'],
 
-        ]
+        ],
+ 
+    menus: {
+        LEDNum: ['1', '2', '3', '4'],
+        servoNum: ['1', '2'],
+        },
+ 
     };
 
     // Register the extension
     ScratchExtensions.register('My first extension', descriptor, ext);
 })({});
+
+
+/*if(ipGobal === 'localhost' || ipGobal === '0')
+        {
+            alert("IP Address for this board was not set.");
+        }
+ 
+        else*/

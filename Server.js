@@ -31,6 +31,10 @@
 
     };
  
+//***********************************************************************************
+//                                 MOTOR FUNCTIONS
+//***********************************************************************************
+
     //Stop function
     ext.stop = function (){
         var msg= 'stop/';
@@ -63,8 +67,29 @@
         sendCommand(msg);
     };
  
+    //turnForward function
+    ext.turnForward= function (leftSpeed, rightSpeed){
+        var msg= 'turnForward/' + leftSpeed + '/' + rightSpeed;
+        sendCommand(msg);
+    };
 
+    //turnReverse function
+    ext.turnReverse= function (leftSpeed, rightSpeed){
+        var msg= 'turnReverse/' + leftSpeed + '/' + rightSpeed;
+        sendCommand(msg);
+    };
  
+    //go function
+    ext.goM= function (leftSpeed, rightSpeed){
+        var msg= 'goM/' + leftSpeed + '/' + rightSpeed;
+        sendCommand(msg);
+    };
+
+    //go function
+    ext.go= function (speed){
+        var msg= 'go/' + speed;
+        sendCommand(msg);
+    };
  
     function sendCommand(msg)
     {
@@ -87,6 +112,11 @@
             [' ', 'Reverse- Set Speed= %n', 'reverse', '30'],
             [' ', 'Spin Right- Set Speed= %n', 'spinLeft', '30'],
             [' ', 'Spin Left- Set Speed= %n', 'spinRight', '30'],
+            [' ', 'Turn Forward- Set Right speed= %n : Set Left speed= %n', 'turnForward', '30', '30'],
+            [' ', 'Turn Reverse- Set Right speed= %n : Set Left speed= %n', 'turnReverse', '30', '30'],
+            [' ', 'Go- Set Right speed= %n : Set Left speed= %n', 'goM', '30', '30'],
+            [' ', 'Go- Set Speed= %n', 'go', '30'],
+
         ]
     };
 

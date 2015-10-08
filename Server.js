@@ -50,6 +50,19 @@
         sendCommand(msg);
  
     };
+ 
+    //spinLeft function
+    ext.spinLeft= function (speed){
+        var msg= 'spinLeft/' + speed;
+        sendCommand(msg);
+    };
+ 
+    //spinRight function
+    ext.spinRight= function (speed){
+        var msg= 'spinLeft/' + speed;
+        sendCommand(msg);
+    };
+ 
 
  
  
@@ -72,6 +85,8 @@
             [' ', 'Stop', 'stop'],
             [' ', 'Forward- Set Speed= %n', 'forward', '30'],
             [' ', 'Reverse- Set Speed= %n', 'reverse', '30'],
+            [' ', 'Spin Right- Set Speed= %n', 'spinLeft', '30'],
+            [' ', 'Spin Left- Set Speed= %n', 'spinRight', '30'],
         ]
     };
 

@@ -30,15 +30,27 @@
         }
 
     };
-    ext.stop = function (){
  
+    //Stop function
+    ext.stop = function (){
+        var msg= 'stop/';
+        sendCommand(msg);
     }
  
+    //Forward function
     ext.forward= function (speed){
         var msg= 'forward/' + speed;
         sendCommand(msg);
  
     };
+ 
+    //Reverse function
+    ext.reverse= function (speed){
+        var msg= 'reverse/' + speed;
+        sendCommand(msg);
+ 
+    };
+
  
  
     function sendCommand(msg)
@@ -58,7 +70,8 @@
             // Block type, block name, function name
             ['w', 'Set Server IPAddress/Port: %s : %s', 'set_Server', 'localhost', '1234'],
             [' ', 'Stop', 'stop'],
-            [' ', 'Forward. Set Speed= %n', 'forward', '30'],
+            [' ', 'Forward- Set Speed= %n', 'forward', '30'],
+            [' ', 'Reverse- Set Speed= %n', 'reverse', '30'],
         ]
     };
 

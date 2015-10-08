@@ -30,6 +30,9 @@
         }
 
     };
+    ext.stop = function (){
+ 
+    }
  
     ext.forward= function (speed){
         var msg= 'forward/' + speed;
@@ -54,6 +57,7 @@
         blocks: [
             // Block type, block name, function name
             ['w', 'Set Server IPAddress/Port: %s : %s', 'set_Server', 'localhost', '1234'],
+            [' ', 'Stop', 'stop'],
             [' ', 'Forward. Set Speed= %n', 'forward', '30'],
         ]
     };

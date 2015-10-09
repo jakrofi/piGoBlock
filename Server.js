@@ -25,6 +25,12 @@
             callback();
         };
  
+        Socket.onmessage= function (messsage){
+            var msg = message.data.split('/');
+            alert(msg[0] + "= " + msg[1]);
+        }
+ 
+ 
         function noServerAlert() {
             return;
         }
@@ -142,6 +148,37 @@
     };
  
  //***********************************************************************************
+ //                                 IR Sensor Functions
+ //***********************************************************************************
+    ext.irLeft= function(){
+        var msg= 'irLeft/';
+        sendCommand(msg);
+    };
+
+    ext.irRight= function(){
+        var msg= 'irRight/';
+        sendCommand(msg);
+    };
+ 
+    ext.irLeftLine= function(){
+        var msg= 'irLeftLine/';
+        sendCommand(msg);
+    };
+ 
+    ext.irRightLine= function(){
+        var msg= 'irRightLine/';
+        sendCommand(msg);
+    };
+ //***********************************************************************************
+ //                                 UltraSonic Functions
+ //***********************************************************************************
+    ext.ultraSonic= function(){
+        var msg= 'ultraSonic/';
+        sendCommand(msg);
+    };
+ 
+ 
+ //***********************************************************************************
  //                                 SEND COMMAND FUNCTION
  //***********************************************************************************
  
@@ -176,7 +213,13 @@
             [' ', 'Set All LEDs- Red:%n, Green:%n, Blue:%n', 'setAllLEDs', '1000', '1000', '1000'],
             [' ', 'Set White LED:%m.LEDNum Value:%n', 'LsetLED','1', '1000'],
             [' ', 'Set All White LEDs- Value:%n', 'LsetAllLEDs','1000'],
-
+            // IR Sensor Blocks
+            [' ', 'Left IR Obstacle sensor', 'irLeft'],
+            [' ', 'Right IR Obstacle sensor', 'irRight'],
+            [' ', 'Left IR Line sensor', 'irLeftLine'],
+            [' ', 'Right IR Line sensor', 'irRightLine'],
+            // UltraSonic Blocks
+            [' ', 'Get Sonar Distance', 'ultraSonic'],
         ],
  
     menus: {

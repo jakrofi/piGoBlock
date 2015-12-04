@@ -57,6 +57,7 @@
     ext.forward= function (speed){
         var msg= 'forward/' + speed;
         sendCommand(msg);
+        alert("BOOYA");
  
     };
  

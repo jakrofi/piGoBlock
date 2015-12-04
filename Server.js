@@ -26,6 +26,7 @@
         };
  
         Socket.onmessage= function (messsage){
+            alert("KWE KWE KWE")
             var msg = message.data.split('/');
             alert(msg[0] + "= " + msg[1]);
         }

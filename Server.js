@@ -26,10 +26,10 @@
         };
  
         Socket.onmessage= function (messsage){
-            //var msg = message.data.split('/');
-            createAlert(message);
+            var msg = message.data.split('/');
+            createAlert(msg);
  
-        }
+        };
  
  
         function noServerAlert() {

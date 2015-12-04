@@ -25,9 +25,9 @@
             callback();
         };
  
-        Socket.onmessage= function (messsage){
+        Socket.onmessage= function (message){
             var msg = message.data.split('/');
-            createAlert(msg);
+            createAlert(message);
  
         };
  

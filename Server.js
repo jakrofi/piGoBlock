@@ -26,9 +26,9 @@
         };
  
         Socket.onmessage= function (messsage){
-            alert("KWE KWE KWE")
             var msg = message.data.split('/');
-            alert(msg[0] + "= " + msg[1]);
+            createAlert(msg);
+ 
         }
  
  
@@ -57,7 +57,8 @@
     ext.forward= function (speed){
         var msg= 'forward/' + speed;
         sendCommand(msg);
-        alert("BOOYA");
+        createAlert(msg);
+
  
     };
  
@@ -183,6 +184,12 @@
  //***********************************************************************************
  //                                 SEND COMMAND FUNCTION
  //***********************************************************************************
+ 
+    function createAlert(msg)
+    {
+        alert(msg[0] + "= " + msg[1]);
+ 
+    }
  
     function sendCommand(msg)
     {

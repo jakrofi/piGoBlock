@@ -28,7 +28,7 @@
         Socket.onmessage= function (message){
             alert("HERE!!!!");
             var msg = message.data.split('/');
-            createAlert(msg);
+            createAlert(msg.data);
             alert("NO DOWN HERE!!!!");
         };
  

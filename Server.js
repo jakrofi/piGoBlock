@@ -30,7 +30,7 @@
             callback();
         };
  
-        /*Socket.onmessage= function (message){
+       /* Socket.onmessage= function (message){
             alert("HERE!!!!");
             var msg = message.data.split('/');
             if (msg === "distance")
@@ -190,7 +190,7 @@
         //alert("HERE!!!!");
         alert(message.data);
         //var msg = message.data.split('/');
- 
+        };
     };
  
  

@@ -187,9 +187,10 @@
         sendCommand(msg);
  
         Socket.onmessage= function (message){
-        alert("HERE!!!!");
-        var msg = message.data.split('/');
-        alert(message.data);
+ 
+            alert("Distance= " + message.data);
+            distance = parseFloat(message.data);
+            alert(distance);
         };
     };
  

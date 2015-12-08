@@ -29,6 +29,7 @@
             alert("HERE!!!!");
             var msg = message.utf8Data.split('/');
             alert(msg);
+            alert(msg[0] + "= " + msg[1]);
             alert("NO DOWN HERE!!!!");
         };
  
@@ -58,8 +59,6 @@
     ext.forward= function (speed){
         var msg= 'forward/' + speed;
         sendCommand(msg);
-        createAlert(msg);
-
  
     };
  
@@ -186,11 +185,11 @@
  //                                 SEND COMMAND FUNCTION
  //***********************************************************************************
  
-    function createAlert(msg)
+    /*function createAlert(msg)
     {
         alert(msg[0] + "= " + msg[1]);
  
-    }
+    }*/
  
     function sendCommand(msg)
     {

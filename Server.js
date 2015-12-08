@@ -29,7 +29,7 @@
             alert("HERE!!!!");
             var msg = message.data.split('/');
             //alert(msg);
-            alert(msg[0] + "= " + msg[1]);
+            alert(msg[1]);
             alert("NO DOWN HERE!!!!");
         };
  

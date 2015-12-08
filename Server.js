@@ -207,7 +207,7 @@
         Socket.onmessage= function (message){
             var msg= message.data;
             alert("State of irRightLine = " + msg);
-            irRightLine = msg == false;
+            irRightLine = msg === "False";
             alert(irRightLine);
         };
 

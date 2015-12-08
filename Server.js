@@ -11,6 +11,11 @@
 
     var Socket;
     var ipGobal= '0';
+    var distance;
+    var irLeft;
+    var irRight;
+    var irLeftLine;
+    var irRightLine;
  
     ext.set_Server = function(ipAddress, port, callback) {
         // Code that gets executed when the block is run
@@ -25,9 +30,12 @@
             callback();
         };
  
-        Socket.onmessage= function (message){
+        /*Socket.onmessage= function (message){
             //alert("HERE!!!!");
             var msg = message.data.split('/');
+            if (msg === "distance")*/
+ 
+ 
             alert(msg);
             //alert("NO DOWN HERE!!!!");
         };
@@ -177,6 +185,12 @@
     ext.ultraSonic= function(){
         var msg= 'ultraSonic/';
         sendCommand(msg);
+ 
+        Socket.onmessage= function (message){
+        //alert("HERE!!!!");
+        alert(message.data);
+        //var msg = message.data.split('/');
+ 
     };
  
  

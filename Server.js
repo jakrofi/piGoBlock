@@ -188,7 +188,7 @@
  
         Socket.onmessage= function (message){
             var msg= message.data;
-            if(msg != "distance"){
+            if(msg !== "distance"){
                 alert("Distance= " + msg);
                 distance = parseFloat(msg);
                 alert(distance);

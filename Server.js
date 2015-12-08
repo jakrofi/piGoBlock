@@ -30,7 +30,7 @@
             callback();
         };
  
-       /* Socket.onmessage= function (message){
+       Socket.onmessage= function (message){
             alert("HERE!!!!");
             var msg = message.data.split('/');
             if (msg === "distance")
@@ -38,7 +38,7 @@
  
             alert(msg);
             //alert("NO DOWN HERE!!!!");
-        };*/
+        };
  
  
         function noServerAlert() {

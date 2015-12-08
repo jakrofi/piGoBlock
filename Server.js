@@ -163,21 +163,54 @@
     ext.irLeft= function(){
         var msg= 'irLeft/';
         sendCommand(msg);
+ 
+        Socket.onmessage= function (message){
+            var msg= message.data;
+            alert("State of irLeft= " + msg);
+            irLeft = parseFloat(msg);
+            alert(irLeft);
+        };
+
     };
 
     ext.irRight= function(){
         var msg= 'irRight/';
         sendCommand(msg);
+ 
+        Socket.onmessage= function (message){
+            var msg= message.data;
+            alert("State of irRight= " + msg);
+            irRight = parseFloat(msg);
+            alert(irRight);
+ 
+        };
+
     };
  
     ext.irLeftLine= function(){
         var msg= 'irLeftLine/';
         sendCommand(msg);
+ 
+        Socket.onmessage= function (message){
+            var msg= message.data;
+            alert("State of irLeftLine= " + msg);
+            irLeftLine = parseFloat(msg);
+            alert(irLeftLine);
+        };
+
     };
  
     ext.irRightLine= function(){
         var msg= 'irRightLine/';
         sendCommand(msg);
+ 
+        Socket.onmessage= function (message){
+            var msg= message.data;
+            alert("State of irRightLine = " + msg);
+            irRightLine = parseFloat(msg);
+            alert(irRightLine);
+        };
+
     };
  //***********************************************************************************
  //                                 UltraSonic Functions
@@ -188,11 +221,10 @@
  
         Socket.onmessage= function (message){
             var msg= message.data;
-            if(msg !== "distance"){
-                alert("Distance= " + msg);
-                distance = parseFloat(msg);
-                alert(distance);
-            }
+            alert("Distance= " + msg);
+            distance = parseFloat(msg);
+            alert(distance);
+ 
         };
     };
  

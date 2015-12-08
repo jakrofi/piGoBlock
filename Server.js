@@ -36,7 +36,7 @@
             if (msg === "distance")*/
  
  
-            alert(message);
+            //alert(message);
             //alert("NO DOWN HERE!!!!");
         };
  

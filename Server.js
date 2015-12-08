@@ -31,12 +31,12 @@
         };
  
        Socket.onmessage= function (message){
-            alert("HERE!!!!");
+            /*alert("HERE!!!!");
             var msg = message.data.split('/');
-            if (msg === "distance")
+            if (msg === "distance")*/
  
  
-            alert(msg);
+            alert(message);
             //alert("NO DOWN HERE!!!!");
         };
  
@@ -187,9 +187,9 @@
         sendCommand(msg);
  
         Socket.onmessage= function (message){
-        //alert("HERE!!!!");
+        alert("HERE!!!!");
+        var msg = message.data.split('/');
         alert(message.data);
-        //var msg = message.data.split('/');
         };
     };
  

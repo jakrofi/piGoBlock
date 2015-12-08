@@ -167,7 +167,7 @@
         Socket.onmessage= function (message){
             var msg= message.data;
             alert("State of irLeft= " + msg);
-            irLeft = parseFloat(msg);
+            irLeft = msg === "False";
             alert(irLeft);
         };
 
@@ -180,7 +180,7 @@
         Socket.onmessage= function (message){
             var msg= message.data;
             alert("State of irRight= " + msg);
-            irRight = parseFloat(msg);
+            irRight = msg === "False";
             alert(irRight);
  
         };
@@ -194,7 +194,7 @@
         Socket.onmessage= function (message){
             var msg= message.data;
             alert("State of irLeftLine= " + msg);
-            irLeftLine = parseFloat(msg);
+            irLeftLine = msg === "False";
             alert(irLeftLine);
         };
 
